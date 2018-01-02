@@ -25,11 +25,7 @@ config :apolo, ApoloWeb.Endpoint,
  	adapter: Ecto.Adapters.Postgres,
  	url: System.get_env("DATABASE_URL"),
  	pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
- 	ssl: true
-
- config :apolo, Apolo.Auth.Guardian,
-  issuer: "apolo", # Name of your app/company/product
-  secret_key: "GjGGD1oGvDTDEz+Wdrjz+Bmo+wpRdkrEIPS7UPOUd8nPMPd+gThzBx43enuVG9ae" # Replace this with the output of the mix command
+ 	ssl: true 
 
 # Do not print debug messages in production
 config :logger, level: :info
