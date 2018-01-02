@@ -17,6 +17,10 @@ config :apolo, ApoloWeb.Endpoint,
   pubsub: [name: Apolo.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+config :apolo, Apolo.Auth.Guardian,
+  issuer: "apolo", # Name of your app/company/product
+  secret_key: "GjGGD1oGvDTDEz+Wdrjz+Bmo+wpRdkrEIPS7UPOUd8nPMPd+gThzBx43enuVG9ae" # Replace this with the output of the mix command
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

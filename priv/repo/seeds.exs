@@ -9,3 +9,6 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+Apolo.Auth.create_user(%{username: "fguillermo", password: "Apolo2017!"})
+Apolo.Auth.create_user(%{username: "evera", password: "Apolo2017!"})
