@@ -24,7 +24,6 @@ defmodule ApoloWeb.Router do
   #Maybe logged in scoped
   scope "/", ApoloWeb do
     pipe_through [:browser, :auth] # Use the default browser stack
-
     get "/", PageController, :index
     post "/", PageController, :login
     post "/logout", PageController, :logout

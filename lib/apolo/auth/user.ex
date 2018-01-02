@@ -17,6 +17,7 @@ defmodule Apolo.Auth.User do
     user
     |> cast(attrs, [:username, :password])
     |> validate_required([:username, :password])
+    |> put_pass_hash()  # Also hash the password so we aren't storing plain-text passwords
   end
 
   defp put_pass_hash(%Ecto.Changeset{valid?: true, changes: %{password: password}} = changeset) do

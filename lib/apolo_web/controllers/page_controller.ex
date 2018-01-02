@@ -5,6 +5,8 @@ defmodule ApoloWeb.PageController do
   alias Apolo.Auth.User
   alias Apolo.Auth.Guardian
 
+  require Logger
+
   def index(conn, _params) do
   	changeset = Auth.change_user(%User{})
   	maybe_user = Guardian.Plug.current_resource(conn)
@@ -22,6 +24,7 @@ defmodule ApoloWeb.PageController do
 
 
   def login(conn, %{"user" => %{"username" => username, "password" => password}}) do
+    Logger.info "user => #{inspect username}"
   	Auth.authenticate_user(username, password)
   	|>login_reply(conn)
   end
