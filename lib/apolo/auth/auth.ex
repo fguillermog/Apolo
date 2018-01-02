@@ -5,9 +5,33 @@ defmodule Apolo.Auth do
 
   import Ecto.Query, warn: false
   alias Apolo.Repo
-  alias Comeonin.Bcrypt
 
+  alias Comeonin.Bcrypt
   alias Apolo.Auth.User
+  require Logger
+
+  @doc """
+  Searches the database for a user with the matching username, then
+  checks that encrypting the plain text password matches in the
+  encrypted password that was stored during user creation.
+  """
+  def authenticate_user(username, plain_text_password) do
+    query = from u in User, where: u.username == ^username
+    Repo.one(query)|> check_password(plain_text_password)
+  end
+
+  defp check_password(nil, _), do: {:error, "Incorrect username or password"}
+
+  defp check_password(user, plain_text_password) do
+    Logger.info "user ====> #{inspect user}"
+    Logger.info "plain_text_password ====> #{inspect plain_text_password}"
+    case Bcrypt.checkpw(plain_text_password, user.password) do
+      true -> 
+        {:ok, user}
+      false -> 
+        {:error, "Incorrect username or password"}
+    end  
+  end
 
   @doc """
   Returns the list of users.
@@ -102,21 +126,4 @@ defmodule Apolo.Auth do
   def change_user(%User{} = user) do
     User.changeset(user, %{})
   end
-
-  def authenticate_user(username, plain_text_password) do
-    query = from u in User, where: u.username == ^username
-    Repo.one(query)|> check_password(plain_text_password)
-  end
-
-  defp check_password(nil, _), do: {:error, "Incorrect username or password"}
-
-  defp check_password(user, plain_text_password) do
-    case Bcrypt.checkpw(plain_text_password, user.password) do
-      true -> 
-        {:ok, user}
-      false -> 
-        {:error, "Incorrect username or password"}
-    end  
-  end
-
 end
