@@ -3,6 +3,7 @@ defmodule Apolo.Auth.Pipeline do
     otp_app: :auth_ex,
     error_handler: Apolo.Auth.ErrorHandler,
     module: Apolo.Auth.Guardian
+    
   # If there is a session token, validate it
   plug Guardian.Plug.VerifySession, claims: %{"typ" => "access"}
   # If there is an authorization header, validate it
