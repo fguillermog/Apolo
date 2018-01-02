@@ -15,6 +15,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :apolo, ApoloWeb.Endpoint,
   load_from_system_env: true,
+  
   url: [scheme: "https", host: "rocky-tor-44342.herokuapp.com", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/cache_manifest.json",
@@ -70,3 +71,4 @@ config :logger, level: :info
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
 #import_config "prod.secret.exs"
+
