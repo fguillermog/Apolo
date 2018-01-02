@@ -12,10 +12,11 @@ config :apolo,
 # Configures the endpoint
 config :apolo, ApoloWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "vyuxfLObkXI9hsiehzjR2k9/WNKYBErs8A6o8JX+ttSQDPqsTvJaHCcDEjzP0Kiu",
+  secret_key_base: "cFXZ+C6q8hwh0hUuUUkWrgvkLfUxEc3O6U190NfDzDEhp+pDYcBv/KAJ9FsXXGmz",
   render_errors: [view: ApoloWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Apolo.PubSub,
            adapter: Phoenix.PubSub.PG2]
+
 
 config :apolo, Apolo.Auth.Guardian,
   issuer: "apolo", # Name of your app/company/product

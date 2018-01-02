@@ -37,7 +37,6 @@ defmodule ApoloWeb.Endpoint do
     store: :cookie,
     key: "_apolo_key",
     signing_salt: "1/14OBVM"
-
   plug ApoloWeb.Router
 
   @doc """
