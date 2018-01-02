@@ -48,6 +48,10 @@ config :logger, :console, format: "[$level] $message\n"
 # in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
 
+config :apolo, Apolo.Auth.Guardian,
+  issuer: "apolo", # Name of your app/company/product
+  secret_key: "GjGGD1oGvDTDEz+Wdrjz+Bmo+wpRdkrEIPS7UPOUd8nPMPd+gThzBx43enuVG9ae" # Replace this with the output of the mix command
+
 # Configure your database
 config :apolo, Apolo.Repo,
   adapter: Ecto.Adapters.Postgres,
