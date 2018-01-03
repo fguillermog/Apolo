@@ -12,7 +12,7 @@ config :apolo,
 # Configures the endpoint
 config :apolo, ApoloWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "mES58AGo+fI9URS7jQ5ALhpKHOvJ1CryULJzunxvBC5OZKSpYeXC/q4Ye5pIAyoA",
+  secret_key_base: "+98SbYAQ5u/E2crhFwiBoPF/mrulgnTOvc68XsjjsHvctSbmyDIIwGU7rmiPrVgn",
   render_errors: [view: ApoloWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Apolo.PubSub,
            adapter: Phoenix.PubSub.PG2]

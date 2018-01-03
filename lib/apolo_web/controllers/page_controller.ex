@@ -1,10 +1,8 @@
 defmodule ApoloWeb.PageController do
   use ApoloWeb, :controller
-
   alias Apolo.Auth
   alias Apolo.Auth.User
   alias Apolo.Auth.Guardian
-
   require Logger
 
   def index(conn, _params) do
@@ -19,9 +17,7 @@ defmodule ApoloWeb.PageController do
   	conn
   		|> put_flash( :info, message)
   		|> render("index.html", changeset: changeset, action: page_path(conn, :login), maybe_user: maybe_user) 
-    
   end
-
 
   def login(conn, %{"user" => %{"username" => username, "password" => password}}) do
     Logger.info "user => #{inspect username}"
@@ -47,6 +43,10 @@ defmodule ApoloWeb.PageController do
   	conn
   	|> Guardian.Plug.sign_out()
   	|> redirect(to: page_path(conn, :login))
+  end
+
+  def secret(conn, _params) do
+    render(conn, "secret.html")
   end
 
 end
