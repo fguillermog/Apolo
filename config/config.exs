@@ -24,7 +24,7 @@ config :logger, :console,
 
 config :apolo, Apolo.Auth.Guardian,
   issuer: "apolo", # Name of your app/company/product
-  secret_key: System.get_env("GUARDIAN_SECRET_KEY") # Replace this with the output of the mix command
+  secret_key: "foobar" # Replace this with the output of the mix command
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
