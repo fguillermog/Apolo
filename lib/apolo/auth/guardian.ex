@@ -1,5 +1,5 @@
 defmodule Apolo.Auth.Guardian do
-  use Guardian, otp_app: :auth_ex
+  use Guardian, otp_app: :apolo
   alias Apolo.Auth
   
   def subject_for_token(user, _claims) do
