@@ -56,3 +56,7 @@ config :apolo, Apolo.Repo,
   database: "apolo_dev",
   hostname: "localhost",
   pool_size: 10
+
+ config :apolo, Apolo.Auth.Guardian,
+  issuer: "apolo", # Name of your app/company/product
+  secret_key: "IXzet0rXnRDHwh2THSAlM9wFqPUvR2ttdQV+iZXqqedIPAZw+6RsmhTx5NL2JKxu" # Replace this with the output of the mix command 
