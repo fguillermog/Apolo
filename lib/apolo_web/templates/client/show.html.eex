@@ -3,56 +3,56 @@
 <ul>
 
   <li>
-    <strong>Brand holder:</strong>
+    <strong>Titular de la marca:</strong>
     <%= @client.brand_holder %>
   </li>
 
   <li>
-    <strong>Denomination:</strong>
+    <strong>Denominación:</strong>
     <%= @client.denomination %>
   </li>
 
   <li>
-    <strong>Class:</strong>
+    <strong>Clase:</strong>
     <%= @client.class %>
   </li>
 
   <li>
-    <strong>Registration date:</strong>
+    <strong>Fecha de registro:</strong>
     <%= @client.registration_date %>
   </li>
 
   <li>
-    <strong>Due date:</strong>
+    <strong>Fecha de vencimineto:</strong>
     <%= @client.due_date %>
   </li>
 
   <li>
-    <strong>Declaration use date:</strong>
+    <strong>Fecha de declaración de uso:</strong>
     <%= @client.declaration_use_date %>
   </li>
 
   <li>
-    <strong>Email:</strong>
+    <strong>Correo:</strong>
     <%= @client.email %>
   </li>
 
   <li>
-    <strong>Phone:</strong>
+    <strong>Teléfono:</strong>
     <%= @client.phone %>
   </li>
 
   <li>
-    <strong>Rfc:</strong>
+    <strong>RFC:</strong>
     <%= @client.rfc %>
   </li>
 
   <li>
-    <strong>Active:</strong>
+    <strong>Activo:</strong>
     <%= @client.active %>
   </li>
 
 </ul>
 
-<span><%= link "Edit", to: client_path(@conn, :edit, @client) %></span>
-<span><%= link "Back", to: client_path(@conn, :index) %></span>
+<span><%= link "Editar", to: client_path(@conn, :edit, @client) %></span>
+<span><%= link "Regresar", to: client_path(@conn, :index) %></span>
