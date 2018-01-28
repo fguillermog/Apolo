@@ -34,6 +34,7 @@ defmodule ApoloWeb.Router do
   scope "/", ApoloWeb do
     pipe_through [:browser, :auth, :ensure_auth]
     get "/secret", PageController, :secret
+    resources "/clients", ClientController
   end
 
   # Other scopes may use custom stacks.

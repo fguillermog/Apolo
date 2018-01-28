@@ -1,6 +1,6 @@
 defmodule Apolo.Auth.Pipeline do
   use Guardian.Plug.Pipeline,
-    otp_app: :auth_ex,
+    otp_app: :apolo,
     error_handler: Apolo.Auth.ErrorHandler,
     module: Apolo.Auth.Guardian
     
