@@ -22,5 +22,9 @@
 <% else %>
 
   <h1>Hello <%= @maybe_user.username%>!</h1>
-  <span><%= link "Logout", to: page_path(@conn, :logout), method: :post %></span>
+  <ol>
+    <li><%= link "Clientes", to: client_path(@conn, :index) %></li>
+    <li><%= link "Logout", to: page_path(@conn, :logout), method: :post %></li>
+  </ol>
+  
 <% end %>

@@ -9,9 +9,9 @@ defmodule ApoloWeb.PageController do
   	changeset = Auth.change_user(%User{})
   	maybe_user = Guardian.Plug.current_resource(conn)
   	message = if maybe_user != nil do
-  		"Someone is logged in"
+  		"Usuario autenticado"
   	else
-  		"No one is logged in"
+  		"Usuario no autenticado"
   	end
 
   	conn
@@ -35,7 +35,7 @@ defmodule ApoloWeb.PageController do
   	conn
   	|> put_flash(:success, "Welcome back!")
   	|> Guardian.Plug.sign_in(user)
-  	|> redirect(to: "/secret")
+  	|> redirect(to: "/")
   end
 
 
