@@ -1,0 +1,58 @@
+<h2>Show Client</h2>
+
+<ul>
+
+  <li>
+    <strong>Brand holder:</strong>
+    <%= @client.brand_holder %>
+  </li>
+
+  <li>
+    <strong>Denomination:</strong>
+    <%= @client.denomination %>
+  </li>
+
+  <li>
+    <strong>Class:</strong>
+    <%= @client.class %>
+  </li>
+
+  <li>
+    <strong>Registration date:</strong>
+    <%= @client.registration_date %>
+  </li>
+
+  <li>
+    <strong>Due date:</strong>
+    <%= @client.due_date %>
+  </li>
+
+  <li>
+    <strong>Declaration use date:</strong>
+    <%= @client.declaration_use_date %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @client.email %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @client.phone %>
+  </li>
+
+  <li>
+    <strong>Rfc:</strong>
+    <%= @client.rfc %>
+  </li>
+
+  <li>
+    <strong>Active:</strong>
+    <%= @client.active %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: client_path(@conn, :edit, @client) %></span>
+<span><%= link "Back", to: client_path(@conn, :index) %></span>

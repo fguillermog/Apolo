@@ -35,7 +35,7 @@ defmodule ApoloWeb.PageController do
   	conn
   	|> put_flash(:success, "Welcome back!")
   	|> Guardian.Plug.sign_in(user)
-  	|> redirect(to: "/")
+  	|> redirect(to: "/secret")
   end
 
 
