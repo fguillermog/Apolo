@@ -1,7 +1,7 @@
 defmodule Apolo.Brands.Client do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Apolo.Brands.Client
+  alias Apolo.Brands.{Client, BrandExpedient}
 
 
   schema "clients" do
@@ -12,7 +12,7 @@ defmodule Apolo.Brands.Client do
     field :email, :string
     field :phone, :string
     field :rfc, :string
-
+    has_many :band_expedients, BrandExpedient
     timestamps()
   end
 

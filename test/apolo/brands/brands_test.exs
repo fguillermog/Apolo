@@ -152,4 +152,78 @@ defmodule Apolo.BrandsTest do
       assert %Ecto.Changeset{} = Brands.change_client(client)
     end
   end
+
+  describe "brand_expedients" do
+    alias Apolo.Brands.BrandExpedient
+
+    @valid_attrs %{active: true, class: "some class", declaration_of_use: ~N[2010-04-17 14:00:00.000000], denomination: "some denomination", due_date: ~N[2010-04-17 14:00:00.000000], holder: "some holder", presentation_date: ~N[2010-04-17 14:00:00.000000], register_date: ~N[2010-04-17 14:00:00.000000]}
+    @update_attrs %{active: false, class: "some updated class", declaration_of_use: ~N[2011-05-18 15:01:01.000000], denomination: "some updated denomination", due_date: ~N[2011-05-18 15:01:01.000000], holder: "some updated holder", presentation_date: ~N[2011-05-18 15:01:01.000000], register_date: ~N[2011-05-18 15:01:01.000000]}
+    @invalid_attrs %{active: nil, class: nil, declaration_of_use: nil, denomination: nil, due_date: nil, holder: nil, presentation_date: nil, register_date: nil}
+
+    def brand_expedient_fixture(attrs \\ %{}) do
+      {:ok, brand_expedient} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Brands.create_brand_expedient()
+
+      brand_expedient
+    end
+
+    test "list_brand_expedients/0 returns all brand_expedients" do
+      brand_expedient = brand_expedient_fixture()
+      assert Brands.list_brand_expedients() == [brand_expedient]
+    end
+
+    test "get_brand_expedient!/1 returns the brand_expedient with given id" do
+      brand_expedient = brand_expedient_fixture()
+      assert Brands.get_brand_expedient!(brand_expedient.id) == brand_expedient
+    end
+
+    test "create_brand_expedient/1 with valid data creates a brand_expedient" do
+      assert {:ok, %BrandExpedient{} = brand_expedient} = Brands.create_brand_expedient(@valid_attrs)
+      assert brand_expedient.active == true
+      assert brand_expedient.class == "some class"
+      assert brand_expedient.declaration_of_use == ~N[2010-04-17 14:00:00.000000]
+      assert brand_expedient.denomination == "some denomination"
+      assert brand_expedient.due_date == ~N[2010-04-17 14:00:00.000000]
+      assert brand_expedient.holder == "some holder"
+      assert brand_expedient.presentation_date == ~N[2010-04-17 14:00:00.000000]
+      assert brand_expedient.register_date == ~N[2010-04-17 14:00:00.000000]
+    end
+
+    test "create_brand_expedient/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Brands.create_brand_expedient(@invalid_attrs)
+    end
+
+    test "update_brand_expedient/2 with valid data updates the brand_expedient" do
+      brand_expedient = brand_expedient_fixture()
+      assert {:ok, brand_expedient} = Brands.update_brand_expedient(brand_expedient, @update_attrs)
+      assert %BrandExpedient{} = brand_expedient
+      assert brand_expedient.active == false
+      assert brand_expedient.class == "some updated class"
+      assert brand_expedient.declaration_of_use == ~N[2011-05-18 15:01:01.000000]
+      assert brand_expedient.denomination == "some updated denomination"
+      assert brand_expedient.due_date == ~N[2011-05-18 15:01:01.000000]
+      assert brand_expedient.holder == "some updated holder"
+      assert brand_expedient.presentation_date == ~N[2011-05-18 15:01:01.000000]
+      assert brand_expedient.register_date == ~N[2011-05-18 15:01:01.000000]
+    end
+
+    test "update_brand_expedient/2 with invalid data returns error changeset" do
+      brand_expedient = brand_expedient_fixture()
+      assert {:error, %Ecto.Changeset{}} = Brands.update_brand_expedient(brand_expedient, @invalid_attrs)
+      assert brand_expedient == Brands.get_brand_expedient!(brand_expedient.id)
+    end
+
+    test "delete_brand_expedient/1 deletes the brand_expedient" do
+      brand_expedient = brand_expedient_fixture()
+      assert {:ok, %BrandExpedient{}} = Brands.delete_brand_expedient(brand_expedient)
+      assert_raise Ecto.NoResultsError, fn -> Brands.get_brand_expedient!(brand_expedient.id) end
+    end
+
+    test "change_brand_expedient/1 returns a brand_expedient changeset" do
+      brand_expedient = brand_expedient_fixture()
+      assert %Ecto.Changeset{} = Brands.change_brand_expedient(brand_expedient)
+    end
+  end
 end
