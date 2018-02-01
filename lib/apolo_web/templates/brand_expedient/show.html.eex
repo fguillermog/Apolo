@@ -44,5 +44,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: brand_expedient_path(@conn, :edit, @brand_expedient) %></span>
-<span><%= link "Back", to: brand_expedient_path(@conn, :index) %></span>
+<span><%= link "Editar", to: brand_expedient_path(@conn, :edit, @brand_expedient) %></span>
+<span><%= link "Atrás", to: brand_expedient_path(@conn, :index_by_client_id, @client.id) %></span>

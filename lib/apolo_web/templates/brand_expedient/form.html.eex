@@ -5,45 +5,59 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= label f, :holder, class: "control-label" %>
+  <div class="form-group"> 
+    <%= label f, :holder, class: "control-label" do %>
+      Titular
+    <%= end %>
     <%= text_input f, :holder, class: "form-control" %>
     <%= error_tag f, :holder %>
   </div>
 
   <div class="form-group">
-    <%= label f, :denomination, class: "control-label" %>
+    <%= label f, :denomination, class: "control-label" do %>
+      Denominación
+    <%= end %>
     <%= text_input f, :denomination, class: "form-control" %>
     <%= error_tag f, :denomination %>
   </div>
 
   <div class="form-group">
-    <%= label f, :class, class: "control-label" %>
+    <%= label f, :class, class: "control-label" do %>
+      Clase
+    <%= end %>
     <%= text_input f, :class, class: "form-control" %>
     <%= error_tag f, :class %>
   </div>
 
   <div class="form-group">
-    <%= label f, :presentation_date, class: "control-label" %>
-    <%= datetime_select f, :presentation_date, class: "form-control" %>
+    <%= label f, :presentation_date, class: "control-label" do %>
+      Fecha de presentación
+    <%= end %>
+    <%= date_select f, :presentation_date, class: "form-control" %>
     <%= error_tag f, :presentation_date %>
   </div>
 
   <div class="form-group">
-    <%= label f, :register_date, class: "control-label" %>
-    <%= datetime_select f, :register_date, class: "form-control" %>
+    <%= label f, :register_date, class: "control-label" do %>
+      Fecha de registro
+    <%= end %>
+    <%= date_select f, :register_date, class: "form-control" %>
     <%= error_tag f, :register_date %>
   </div>
 
   <div class="form-group">
-    <%= label f, :due_date, class: "control-label" %>
-    <%= datetime_select f, :due_date, class: "form-control" %>
+    <%= label f, :due_date, class: "control-label" do %>
+      Fecha de vencimiento
+    <%= end %>
+    <%= date_select f, :due_date, class: "form-control" %>
     <%= error_tag f, :due_date %>
   </div>
 
   <div class="form-group">
-    <%= label f, :declaration_of_use, class: "control-label" %>
-    <%= datetime_select f, :declaration_of_use, class: "form-control" %>
+    <%= label f, :declaration_of_use, class: "control-label" do %>
+      Fecha de declaración de uso
+    <%= end %>
+    <%= date_select f, :declaration_of_use, class: "form-control" %>
     <%= error_tag f, :declaration_of_use %>
   </div>
 
@@ -53,7 +67,9 @@
     <%= error_tag f, :active %>
   </div>
 
+   <%= hidden_input f, :client_id, id: "client_id", value: @client.id %>
+
   <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
+    <%= submit "Enviar", class: "btn btn-primary" %>
   </div>
 <% end %>

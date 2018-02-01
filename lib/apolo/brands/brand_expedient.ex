@@ -21,7 +21,7 @@ defmodule Apolo.Brands.BrandExpedient do
   @doc false
   def changeset(%BrandExpedient{} = brand_expedient, attrs) do
     brand_expedient
-    |> cast(attrs, [:holder, :denomination, :class, :presentation_date, :register_date, :due_date, :declaration_of_use, :active])
-    |> validate_required([:holder, :denomination, :class, :presentation_date, :register_date, :due_date, :declaration_of_use, :active])
+    |> cast(attrs, [:holder, :denomination, :class, :presentation_date, :register_date, :due_date, :declaration_of_use, :active, :client_id])
+    |> validate_required([:holder, :denomination, :class, :presentation_date, :register_date, :due_date, :declaration_of_use, :active, :client_id])
   end
 end

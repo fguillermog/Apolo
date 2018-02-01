@@ -117,6 +117,11 @@ defmodule Apolo.Brands do
     Repo.all(BrandExpedient)
   end
 
+
+  def list_brand_expedients_by_client_id(client_id) do
+    query = from bc in BrandExpedient, where: bc.client_id ==^client_id
+    Repo.all(query)
+  end
   @doc """
   Gets a single brand_expedient.
 

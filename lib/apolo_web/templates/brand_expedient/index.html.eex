@@ -1,16 +1,16 @@
-<h2>Listing Brand expedients</h2>
+<h2>Listado de expedientes</h2>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Holder</th>
-      <th>Denomination</th>
-      <th>Class</th>
-      <th>Presentation date</th>
-      <th>Register date</th>
-      <th>Due date</th>
-      <th>Declaration of use</th>
-      <th>Active</th>
+      <th>Titular</th>
+      <th>Denominación</th>
+      <th>Clase</th>
+      <th>Fecha de presentación</th>
+      <th>Fecha de registro</th>
+      <th>Fecha de vencimiento</th>
+      <th>Fecha de declaración de uso</th>
+      <th>Activo</th>
 
       <th></th>
     </tr>
@@ -25,16 +25,16 @@
       <td><%= brand_expedient.register_date %></td>
       <td><%= brand_expedient.due_date %></td>
       <td><%= brand_expedient.declaration_of_use %></td>
-      <td><%= brand_expedient.active %></td>
+      <td><%= brand_expedient.active %> </td>
 
       <td class="text-right">
-        <span><%= link "Show", to: brand_expedient_path(@conn, :show, brand_expedient), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: brand_expedient_path(@conn, :edit, brand_expedient), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: brand_expedient_path(@conn, :delete, brand_expedient), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <span><%= link "Mostrar", to: brand_expedient_path(@conn, :show, brand_expedient), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Editar", to: brand_expedient_path(@conn, :edit, brand_expedient), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Borrar", to: brand_expedient_path(@conn, :delete, brand_expedient), method: :delete, data: [confirm: "Estas seguro?"], class: "btn btn-danger btn-xs" %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
+<span><%= link "Nuevo Expediente", to: brand_expedient_path(@conn, :new_by_client_id, @client.id) %></span>
 
-<span><%= link "New Brand expedient", to: brand_expedient_path(@conn, :new) %></span>
