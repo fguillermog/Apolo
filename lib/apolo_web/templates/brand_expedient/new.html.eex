@@ -1,0 +1,5 @@
+<h2>Nuevo expediente</h2>
+
+<%= render "form.html", Map.put(assigns, :action, brand_expedient_path(@conn, :create)) %>
+
+<span><%= link "Atrás", to: brand_expedient_path(@conn, :index_by_client_id, @client.id) %></span>

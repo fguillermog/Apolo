@@ -35,6 +35,10 @@ defmodule ApoloWeb.Router do
     pipe_through [:browser, :auth, :ensure_auth]
     get "/secret", PageController, :secret
     resources "/clients", ClientController
+    resources "/brand_expedients", BrandExpedientController
+    get "/index_by_client_id/:client_id", BrandExpedientController, :index_by_client_id
+    get "/new_by_client_id/:client_id", BrandExpedientController, :new_by_client_id
+    
   end
 
   # Other scopes may use custom stacks.

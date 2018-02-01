@@ -1,0 +1,48 @@
+<h2>Show Brand expedient</h2>
+
+<ul>
+
+  <li>
+    <strong>Holder:</strong>
+    <%= @brand_expedient.holder %>
+  </li>
+
+  <li>
+    <strong>Denomination:</strong>
+    <%= @brand_expedient.denomination %>
+  </li>
+
+  <li>
+    <strong>Class:</strong>
+    <%= @brand_expedient.class %>
+  </li>
+
+  <li>
+    <strong>Presentation date:</strong>
+    <%= @brand_expedient.presentation_date %>
+  </li>
+
+  <li>
+    <strong>Register date:</strong>
+    <%= @brand_expedient.register_date %>
+  </li>
+
+  <li>
+    <strong>Due date:</strong>
+    <%= @brand_expedient.due_date %>
+  </li>
+
+  <li>
+    <strong>Declaration of use:</strong>
+    <%= @brand_expedient.declaration_of_use %>
+  </li>
+
+  <li>
+    <strong>Active:</strong>
+    <%= @brand_expedient.active %>
+  </li>
+
+</ul>
+
+<span><%= link "Editar", to: brand_expedient_path(@conn, :edit, @brand_expedient) %></span>
+<span><%= link "Atrás", to: brand_expedient_path(@conn, :index_by_client_id, @client.id) %></span>

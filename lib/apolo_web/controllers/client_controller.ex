@@ -18,7 +18,7 @@ defmodule ApoloWeb.ClientController do
     case Brands.create_client(client_params) do
       {:ok, client} ->
         conn
-        |> put_flash(:info, "Client created successfully.")
+        |> put_flash(:info, "Cliente creado sastisfactoriamente.")
         |> redirect(to: client_path(conn, :show, client))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -42,7 +42,7 @@ defmodule ApoloWeb.ClientController do
     case Brands.update_client(client, client_params) do
       {:ok, client} ->
         conn
-        |> put_flash(:info, "Client updated successfully.")
+        |> put_flash(:info, "Cliente actualizado sastisfactoriamente.")
         |> redirect(to: client_path(conn, :show, client))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", client: client, changeset: changeset)
@@ -54,7 +54,7 @@ defmodule ApoloWeb.ClientController do
     {:ok, _client} = Brands.delete_client(client)
 
     conn
-    |> put_flash(:info, "Client deleted successfully.")
+    |> put_flash(:info, "Client borrado sastisfactoriamente.")
     |> redirect(to: client_path(conn, :index))
   end
 end
