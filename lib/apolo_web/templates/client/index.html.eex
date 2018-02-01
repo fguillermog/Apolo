@@ -15,6 +15,7 @@
     </tr>
   </thead>
   <tbody>
+    
 <%= for client <- @clients do %>
     <tr>
       <td><%= client.client %></td>
