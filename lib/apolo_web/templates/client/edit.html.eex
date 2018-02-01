@@ -2,4 +2,4 @@
 
 <%= render "form.html", Map.put(assigns, :action, client_path(@conn, :update, @client)) %>
 
-<span><%= link "Regresar", to: client_path(@conn, :index) %></span>
+<span><%= link "Atrás", to: client_path(@conn, :index) %></span>

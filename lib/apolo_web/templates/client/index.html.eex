@@ -1,18 +1,15 @@
-<h2>Listing Clients</h2>
+<h2>Listado de Clientes</h2>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Brand holder</th>
-      <th>Denomination</th>
-      <th>Class</th>
-      <th>Registration date</th>
-      <th>Due date</th>
-      <th>Declaration use date</th>
+      <th>Cliente</th>
+      <th>Contacto</th>
       <th>Email</th>
-      <th>Phone</th>
-      <th>Rfc</th>
-      <th>Active</th>
+      <th>Teléfono</th>
+      <th>Dirección</th>
+      <th>RFC</th>
+      <th>Activo</th>
 
       <th></th>
     </tr>
@@ -20,25 +17,22 @@
   <tbody>
 <%= for client <- @clients do %>
     <tr>
-      <td><%= client.brand_holder %></td>
-      <td><%= client.denomination %></td>
-      <td><%= client.class %></td>
-      <td><%= client.registration_date %></td>
-      <td><%= client.due_date %></td>
-      <td><%= client.declaration_use_date %></td>
+      <td><%= client.client %></td>
+      <td><%= client.contact %></td>
       <td><%= client.email %></td>
       <td><%= client.phone %></td>
+      <td><%= client.address %></td>
       <td><%= client.rfc %></td>
       <td><%= client.active %></td>
 
       <td class="text-right">
         <span><%= link "Mostrar", to: client_path(@conn, :show, client), class: "btn btn-default btn-xs" %></span>
         <span><%= link "Editar", to: client_path(@conn, :edit, client), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Borrar", to: client_path(@conn, :delete, client), method: :delete, data: [confirm: "Estás Seguro?"], class: "btn btn-danger btn-xs" %></span>
+        <span><%= link "Borrar", to: client_path(@conn, :delete, client), method: :delete, data: [confirm: "Estás seguro?"], class: "btn btn-danger btn-xs" %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Client", to: client_path(@conn, :new) %></span>
+<span><%= link "Cliente Nuevo", to: client_path(@conn, :new) %></span>

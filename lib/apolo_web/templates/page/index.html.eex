@@ -1,4 +1,4 @@
-<h2>Login Page</h2>
+<h2>Menú Principal</h2>
 <%= if @maybe_user == nil do %>
 
   <%= form_for @changeset, @action, fn f -> %>
@@ -21,7 +21,7 @@
 
 <% else %>
 
-  <h1>Hello <%= @maybe_user.username%>!</h1>
+  <h1>Hola <%= @maybe_user.username%>!</h1>
   <ol>
     <li><%= link "Clientes", to: client_path(@conn, :index) %></li>
     <li><%= link "Logout", to: page_path(@conn, :logout), method: :post %></li>

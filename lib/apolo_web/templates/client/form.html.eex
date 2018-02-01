@@ -6,57 +6,26 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :brand_holder, class: "control-label" do %>
-      Titular de la marca
-    <%=end %>
-    <%= text_input f, :brand_holder, class: "form-control" %>
-    <%= error_tag f, :brand_holder %>
+    <%= label f, :client, class: "control-label" do %>
+      Cliente
+    <%= end %>
+      
+    <%= text_input f, :client, class: "form-control" %>
+    <%= error_tag f, :client %>
   </div>
 
   <div class="form-group">
-    <%= label f, :denomination, class: "control-label" do %>
-      Denominación
-    <%=end %>
-    <%= text_input f, :denomination, class: "form-control" %>
-    <%= error_tag f, :denomination %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :class, class: "control-label" do %>
-      Clase
-    <%=end %>
-    <%= text_input f, :class, class: "form-control" %>
-    <%= error_tag f, :class %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :registration_date, class: "control-label" do %>
-    Fecha de registro
-    <%=end %>
-    <%= datetime_select f, :registration_date, class: "form-control" %>
-    <%= error_tag f, :registration_date %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :due_date, class: "control-label" do %>
-      Fecha de Vencimineto
-    <%=end %>
-    <%= datetime_select f, :due_date, class: "form-control" %>
-    <%= error_tag f, :due_date %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :declaration_use_date, class: "control-label" do %>
-      Fecha de declaración de uso
-    <%=end %>
-    <%= datetime_select f, :declaration_use_date, class: "form-control" %>
-    <%= error_tag f, :declaration_use_date %>
+    <%= label f, :contact, class: "control-label" do %>
+      Contacto
+    <%= end %>
+    <%= text_input f, :contact, class: "form-control" %>
+    <%= error_tag f, :contact %>
   </div>
 
   <div class="form-group">
     <%= label f, :email, class: "control-label" do %>
-      Correo
-    <%=end %>
+      Email
+    <%= end %>
     <%= text_input f, :email, class: "form-control" %>
     <%= error_tag f, :email %>
   </div>
@@ -64,15 +33,23 @@
   <div class="form-group">
     <%= label f, :phone, class: "control-label" do %>
       Teléfono
-    <%=end %>
+    <%= end %>
     <%= text_input f, :phone, class: "form-control" %>
     <%= error_tag f, :phone %>
   </div>
 
   <div class="form-group">
+    <%= label f, :address, class: "control-label" do %>
+      Dirección
+    <%= end %>
+    <%= text_input f, :address, class: "form-control" %>
+    <%= error_tag f, :address %>
+  </div>
+
+  <div class="form-group">
     <%= label f, :rfc, class: "control-label" do %>
       RFC
-    <%=end %>
+    <%= end %>
     <%= text_input f, :rfc, class: "form-control" %>
     <%= error_tag f, :rfc %>
   </div>
@@ -80,7 +57,7 @@
   <div class="form-group">
     <%= label f, :active, class: "control-label" do %>
       Activo
-    <%=end %>
+    <%= end %>
     <%= checkbox f, :active, class: "checkbox" %>
     <%= error_tag f, :active %>
   </div>
