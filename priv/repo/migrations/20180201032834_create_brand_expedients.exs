@@ -1,6 +1,7 @@
 defmodule Apolo.Repo.Migrations.CreateBrandExpedients do
   use Ecto.Migration
 
+
   def change do
     create table(:brand_expedients) do
       add :holder, :string
