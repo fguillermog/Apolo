@@ -3,9 +3,9 @@ defmodule ApoloWeb.ClientControllerTest do
 
   alias Apolo.Brands
 
-  @create_attrs %{active: true, brand_holder: "some brand_holder", class: "some class", declaration_use_date: ~N[2010-04-17 14:00:00.000000], denomination: "some denomination", due_date: ~N[2010-04-17 14:00:00.000000], email: "some email", phone: "some phone", registration_date: ~N[2010-04-17 14:00:00.000000], rfc: "some rfc"}
-  @update_attrs %{active: false, brand_holder: "some updated brand_holder", class: "some updated class", declaration_use_date: ~N[2011-05-18 15:01:01.000000], denomination: "some updated denomination", due_date: ~N[2011-05-18 15:01:01.000000], email: "some updated email", phone: "some updated phone", registration_date: ~N[2011-05-18 15:01:01.000000], rfc: "some updated rfc"}
-  @invalid_attrs %{active: nil, brand_holder: nil, class: nil, declaration_use_date: nil, denomination: nil, due_date: nil, email: nil, phone: nil, registration_date: nil, rfc: nil}
+  @create_attrs %{active: true, address: "some address", client: "some client", contact: "some contact", email: "some email", phone: "some phone", rfc: "some rfc"}
+  @update_attrs %{active: false, address: "some updated address", client: "some updated client", contact: "some updated contact", email: "some updated email", phone: "some updated phone", rfc: "some updated rfc"}
+  @invalid_attrs %{active: nil, address: nil, client: nil, contact: nil, email: nil, phone: nil, rfc: nil}
 
   def fixture(:client) do
     {:ok, client} = Brands.create_client(@create_attrs)
@@ -60,7 +60,7 @@ defmodule ApoloWeb.ClientControllerTest do
       assert redirected_to(conn) == client_path(conn, :show, client)
 
       conn = get conn, client_path(conn, :show, client)
-      assert html_response(conn, 200) =~ "some updated brand_holder"
+      assert html_response(conn, 200) =~ "some updated address"
     end
 
     test "renders errors when data is invalid", %{conn: conn, client: client} do

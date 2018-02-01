@@ -6,14 +6,11 @@ defmodule Apolo.Brands.Client do
 
   schema "clients" do
     field :active, :boolean, default: false
-    field :brand_holder, :string
-    field :class, :string
-    field :declaration_use_date, :naive_datetime
-    field :denomination, :string
-    field :due_date, :naive_datetime
+    field :address, :string
+    field :client, :string
+    field :contact, :string
     field :email, :string
     field :phone, :string
-    field :registration_date, :naive_datetime
     field :rfc, :string
 
     timestamps()
@@ -22,7 +19,7 @@ defmodule Apolo.Brands.Client do
   @doc false
   def changeset(%Client{} = client, attrs) do
     client
-    |> cast(attrs, [:brand_holder, :denomination, :class, :registration_date, :due_date, :declaration_use_date, :email, :phone, :rfc, :active])
-    |> validate_required([:brand_holder, :denomination, :class, :registration_date, :due_date, :declaration_use_date, :email, :phone, :rfc, :active])
+    |> cast(attrs, [:client, :contact, :email, :phone, :address, :rfc, :active])
+    |> validate_required([:client, :contact, :email, :phone, :address, :rfc, :active])
   end
 end

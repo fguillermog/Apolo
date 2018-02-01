@@ -3,43 +3,28 @@
 <ul>
 
   <li>
-    <strong>Titular de la marca:</strong>
-    <%= @client.brand_holder %>
+    <strong>Cliente:</strong>
+    <%= @client.client %>
   </li>
 
   <li>
-    <strong>Denominación:</strong>
-    <%= @client.denomination %>
+    <strong>Contaco:</strong>
+    <%= @client.contact %>
   </li>
 
   <li>
-    <strong>Clase:</strong>
-    <%= @client.class %>
-  </li>
-
-  <li>
-    <strong>Fecha de registro:</strong>
-    <%= @client.registration_date %>
-  </li>
-
-  <li>
-    <strong>Fecha de vencimineto:</strong>
-    <%= @client.due_date %>
-  </li>
-
-  <li>
-    <strong>Fecha de declaración de uso:</strong>
-    <%= @client.declaration_use_date %>
-  </li>
-
-  <li>
-    <strong>Correo:</strong>
+    <strong>Email:</strong>
     <%= @client.email %>
   </li>
 
   <li>
     <strong>Teléfono:</strong>
     <%= @client.phone %>
+  </li>
+
+  <li>
+    <strong>Dirección:</strong>
+    <%= @client.address %>
   </li>
 
   <li>
@@ -55,4 +40,4 @@
 </ul>
 
 <span><%= link "Editar", to: client_path(@conn, :edit, @client) %></span>
-<span><%= link "Regresar", to: client_path(@conn, :index) %></span>
+<span><%= link "Atrás", to: client_path(@conn, :index) %></span>
